@@ -17,5 +17,7 @@ However, if you can program, it’s possible to use all the source code of the a
 All you have to do is open the installation directory, like every other Python project, in your IDE.
 
 Check user manual on https://www.solvethat.net/manual.html.
+
 You can run application with .bat script that open CMD or by double clicking on .vbs without openning cmd window.
+
 If you want to start application from CMD without scripts, just run "python Main.py".
