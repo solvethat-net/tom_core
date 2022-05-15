@@ -84,7 +84,7 @@ class WelcomePanel(CoreModel, GUIModel):
         self.listbox_data = self.framework.databases.get_all_udb_entity("DATABASES")
         ind = 0
         for one in self.listbox_data:
-            if self.framework.filesystem.getFile().check_exist(one[0]) == MetadataEnum.OK:
+            if self.framework.filesystem.get_file().check_exist(one[0]):
                 new_content.append(one)
                 self.listbox.insert(END, one[1])
                 self.listbox.itemconfig(ind, {'fg': 'black'})

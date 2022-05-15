@@ -15,7 +15,7 @@
 # along with this program; if not, is available on:
 # https://www.solvethat.net/installer/GNU_License.pdf
 
-# Generated 2022-05-08 22:04:12.091140
+# Generated 2022-05-15 19:54:37.818594
 # Class CurrentDatabase
 import datetime
 from core_util.LogEnum import LogEnum
@@ -23,27 +23,27 @@ from core_util.LogEnum import LogEnum
 
 class CurrentDatabase:
 
-    def write_treatment(self, synapse_model):
-        from process.modules.current_database.core.Treatment import Treatment
-        synapse_model.log.append([datetime.datetime.now(), LogEnum.current_database_write_treatment,""])
-        return Treatment().write_treatment(synapse_model)
+    def write_synapse_model(self, synapse_model):
+        from process.modules.current_database.core.Controller import Controller
+        synapse_model.log.append([datetime.datetime.now(), LogEnum.current_database_write_synapse_model,""])
+        return Controller().write_synapse_model(synapse_model)
 
     def create_new_sequence(self, synapse_model):
-        from process.modules.current_database.core.Treatment import Treatment
+        from process.modules.current_database.core.Controller import Controller
         synapse_model.log.append([datetime.datetime.now(), LogEnum.current_database_create_new_sequence,""])
-        return Treatment().create_new_sequence(synapse_model)
+        return Controller().create_new_sequence(synapse_model)
 
     def create_new_condition(self, data, true, false, threshold, position):
-        from process.modules.current_database.core.Treatment import Treatment
-        return Treatment().create_new_condition(data, true, false, threshold, position)
+        from process.modules.current_database.core.Controller import Controller
+        return Controller().create_new_condition(data, true, false, threshold, position)
 
     def create_new_watcher(self, data, true, false, threshold, position):
-        from process.modules.current_database.core.Treatment import Treatment
-        return Treatment().create_new_watcher(data, true, false, threshold, position)
+        from process.modules.current_database.core.Controller import Controller
+        return Controller().create_new_watcher(data, true, false, threshold, position)
 
     def read_treatment(self, synapse_model):
-        from process.modules.current_database.core.Treatment import Treatment
+        from process.modules.current_database.core.Controller import Controller
         synapse_model.log.append([datetime.datetime.now(), LogEnum.current_database_read_treatment,""])
-        return Treatment().read_treatment(synapse_model)
+        return Controller().read_treatment(synapse_model)
 
 # End of class CurrentDatabase

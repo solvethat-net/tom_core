@@ -28,5 +28,5 @@ class ReadAndExecuteSequence(CoreModel):
         synapse_model = self.process.metadata_obtaining.treatment_non_lang_expressions(synapse_model)
         synapse_model = self.process.source_reading.treatment_source(synapse_model)
         synapse_model = self.process.metadata_obtaining.treatment_data(synapse_model)
-        synapse_model = self.process.current_database.write_treatment(synapse_model)
+        synapse_model = self.process.current_database.write_synapse_model(synapse_model)
         return synapse_model

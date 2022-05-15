@@ -15,7 +15,7 @@
 # along with this program; if not, is available on:
 # https://www.solvethat.net/installer/GNU_License.pdf
 
-# Generated 2022-05-08 22:04:12.091140
+# Generated 2022-05-15 19:54:37.818594
 # Class UserInteraction
 import datetime
 from core_util.LogEnum import LogEnum
@@ -24,13 +24,13 @@ from core_util.LogEnum import LogEnum
 class UserInteraction:
 
     def print_terminal_output(self, synapse_model):
-        from process.modules.user_interaction.core.Terminal_Interface import Terminal_Interface
+        from process.modules.user_interaction.core.TerminalIface import TerminalIface
         synapse_model.log.append([datetime.datetime.now(), LogEnum.user_interaction_print_terminal_output,""])
-        return Terminal_Interface().print_terminal_output(synapse_model)
+        return TerminalIface().print_terminal_output(synapse_model)
 
     def run_terminal_user_input_once(self, synapse_model):
-        from process.modules.user_interaction.core.Terminal_Interface import Terminal_Interface
+        from process.modules.user_interaction.core.TerminalIface import TerminalIface
         synapse_model.log.append([datetime.datetime.now(), LogEnum.user_interaction_run_terminal_user_input_once,""])
-        return Terminal_Interface().run_terminal_user_input_once(synapse_model)
+        return TerminalIface().run_terminal_user_input_once(synapse_model)
 
 # End of class UserInteraction

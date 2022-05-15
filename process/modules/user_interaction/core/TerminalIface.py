@@ -15,14 +15,18 @@
 # along with this program; if not, is available on:
 # https://www.solvethat.net/installer/GNU_License.pdf
 
-# Generated 2022-05-15 19:54:37.818594
-from sequences.modules.input_treatment.InputTreatment import InputTreatment
-from sequences.modules.on_start.OnStart import OnStart
-from sequences.modules.read_and_execute.ReadAndExecute import ReadAndExecute
+from process.modules.user_interaction.core.terminal.TerminalInput import TerminalInput
+from process.modules.user_interaction.core.terminal.TerminalOutput import TerminalOutput
 
 
-class Sequences:
-    input_treatment = InputTreatment()
-    on_start = OnStart()
-    read_and_execute = ReadAndExecute()
-# End of class Sequences
+class TerminalIface:
+
+    def __init__(self):
+        self.terminal_out_put = TerminalOutput()
+        self.terminal_input = TerminalInput()
+
+    def print_terminal_output(self, synapse_model):
+        return self.terminal_out_put.print_terminal_output(synapse_model)
+
+    def run_terminal_user_input_once(self, synapse_model):
+        return self.terminal_input.run_terminal_user_input_once(synapse_model)

@@ -15,14 +15,19 @@
 # along with this program; if not, is available on:
 # https://www.solvethat.net/installer/GNU_License.pdf
 
-# Generated 2022-05-15 19:54:37.818594
-from sequences.modules.input_treatment.InputTreatment import InputTreatment
-from sequences.modules.on_start.OnStart import OnStart
-from sequences.modules.read_and_execute.ReadAndExecute import ReadAndExecute
+from framework.Framework import Framework
 
 
-class Sequences:
-    input_treatment = InputTreatment()
-    on_start = OnStart()
-    read_and_execute = ReadAndExecute()
-# End of class Sequences
+class Controller:
+
+    def __init__(self):
+        self.framework = Framework()
+
+    def control_dir(self, synapse_model):
+        # Determine what kind of action do with directory
+        return self.framework.process_support.set_and_run_by_metadata(self.framework.filesystem.get_dir(), synapse_model)
+
+    def control_file(self, synapse_model):
+        # Determine what kind of action do with file
+        return self.framework.process_support.set_and_run_by_metadata(self.framework.filesystem.get_file(),
+                                                                      synapse_model)

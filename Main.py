@@ -24,7 +24,7 @@ from sequences.Sequences import Sequences
 class Main(CoreModel):
 
     def __init__(self):
-        logo = open("core_util/properties/logo.txt", "r", encoding="utf8").read()
+        logo = open("properties/logo.txt", "r", encoding="utf8").read()
         # print('\033[94m' + logo + '\033[0m')
         print(logo)
         CoreModel.root_path = os.path.dirname(os.path.abspath(__file__))

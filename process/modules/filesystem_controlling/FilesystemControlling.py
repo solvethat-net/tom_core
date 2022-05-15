@@ -15,7 +15,7 @@
 # along with this program; if not, is available on:
 # https://www.solvethat.net/installer/GNU_License.pdf
 
-# Generated 2022-05-08 22:04:12.091140
+# Generated 2022-05-15 19:54:37.818594
 # Class FilesystemControlling
 import datetime
 from core_util.LogEnum import LogEnum
@@ -24,13 +24,13 @@ from core_util.LogEnum import LogEnum
 class FilesystemControlling:
 
     def control_dir(self, synapse_model):
-        from process.modules.filesystem_controlling.core.Treatment import Treatment
+        from process.modules.filesystem_controlling.core.Controller import Controller
         synapse_model.log.append([datetime.datetime.now(), LogEnum.filesystem_controlling_control_dir,""])
-        return Treatment().control_dir(synapse_model)
+        return Controller().control_dir(synapse_model)
 
     def control_file(self, synapse_model):
-        from process.modules.filesystem_controlling.core.Treatment import Treatment
+        from process.modules.filesystem_controlling.core.Controller import Controller
         synapse_model.log.append([datetime.datetime.now(), LogEnum.filesystem_controlling_control_file,""])
-        return Treatment().control_file(synapse_model)
+        return Controller().control_file(synapse_model)
 
 # End of class FilesystemControlling

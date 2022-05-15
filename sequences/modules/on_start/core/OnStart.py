@@ -18,6 +18,7 @@
 from core_util.CoreModel import CoreModel
 from core_util.MetadataEnum import MetadataEnum
 from framework.Framework import Framework
+from process.Process import Process
 from ui.Ui import Ui
 
 
@@ -26,14 +27,13 @@ class OnStart(CoreModel):
     def __init__(self):
         self.framework = Framework()
         self.ui = Ui()
+        self.process = Process()
 
     def run(self):
-        # TODO check for updates
-        # res = self.framework.databases.get_current_config_value("first_start")
+        self.process.core_update.update_core()
         res = self.framework.databases.get_current_config_value("current_database")
         if res != MetadataEnum.ERROR:
-            exist = self.framework.filesystem.getFile().check_exist(res)
-            if exist == MetadataEnum.OK:
+            if self.framework.filesystem.get_file().check_exist(res):
                 CoreModel.current_db_file_path = res
             else:
                 CoreModel.current_db_file_path = None

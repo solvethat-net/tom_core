@@ -26,9 +26,9 @@ class ObjectInterface:
         self.directory = Directory()
 
     # Getter of file object
-    def getFile(self):
+    def get_file(self):
         return self.file
 
     # Getter of directory object
-    def getDir(self):
+    def get_dir(self):
         return self.directory

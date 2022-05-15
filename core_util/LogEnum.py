@@ -21,7 +21,7 @@ from enum import Enum
 
 
 class LogEnum(Enum):
-    current_database_write_treatment = ["current_database", "write_treatment"]
+    current_database_write_synapse_model = ["current_database", "write_synapse_model"]
     current_database_create_new_sequence = ["current_database", "create_new_sequence"]
     current_database_create_new_condition = ["current_database", "create_new_condition"]
     current_database_create_new_watcher = ["current_database", "create_new_watcher"]

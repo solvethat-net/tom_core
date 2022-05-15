@@ -60,11 +60,7 @@ class File(ParentObject):
         pass
 
     def check_exist(self, path):
-        try:
-            open(path, "r")
-            return MetadataEnum.OK
-        except:
-            return MetadataEnum.ERROR
+        return os.path.isfile(path)
 
     def rename(self):
         os.rename(self.input, self.output)

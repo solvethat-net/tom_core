@@ -15,16 +15,16 @@
 # along with this program; if not, is available on:
 # https://www.solvethat.net/installer/GNU_License.pdf
 
-# Generated 2022-05-08 22:04:12.081266
+# Generated 2022-05-15 19:54:37.818594
 # Class Filesystem
 class Filesystem:
 
-    def getFile(self):
+    def get_file(self):
         from framework.modules.filesystem.core.ObjectInterface import ObjectInterface
-        return ObjectInterface().getFile()
+        return ObjectInterface().get_file()
 
-    def getDir(self):
+    def get_dir(self):
         from framework.modules.filesystem.core.ObjectInterface import ObjectInterface
-        return ObjectInterface().getDir()
+        return ObjectInterface().get_dir()
 
 # End of class Filesystem

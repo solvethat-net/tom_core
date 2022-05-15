@@ -15,7 +15,7 @@
 # along with this program; if not, is available on:
 # https://www.solvethat.net/installer/GNU_License.pdf
 
-# Generated 2022-05-08 22:04:12.091140
+# Generated 2022-05-15 19:54:37.818594
 # Class MetadataObtaining
 import datetime
 from core_util.LogEnum import LogEnum
@@ -24,13 +24,13 @@ from core_util.LogEnum import LogEnum
 class MetadataObtaining:
 
     def treatment_data(self, synapse_model):
-        from process.modules.metadata_obtaining.core.ObtainMetadata import ObtainMetadata
+        from process.modules.metadata_obtaining.core.Obtainer import Obtainer
         synapse_model.log.append([datetime.datetime.now(), LogEnum.metadata_obtaining_treatment_data,""])
-        return ObtainMetadata().treatment_data(synapse_model)
+        return Obtainer().treatment_data(synapse_model)
 
     def treatment_non_lang_expressions(self, synapse_model):
-        from process.modules.metadata_obtaining.core.ObtainMetadata import ObtainMetadata
+        from process.modules.metadata_obtaining.core.Obtainer import Obtainer
         synapse_model.log.append([datetime.datetime.now(), LogEnum.metadata_obtaining_treatment_non_lang_expressions,""])
-        return ObtainMetadata().treatment_non_lang_expressions(synapse_model)
+        return Obtainer().treatment_non_lang_expressions(synapse_model)
 
 # End of class MetadataObtaining

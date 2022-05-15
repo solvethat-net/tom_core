@@ -24,7 +24,7 @@ class CoreModel:
     user_name = "Sick-E"
     language_list = ["en-GB", "es-ES", "fr-FR", "ru-RU", "it-IT", "pl-PL", "cs-CS", "sk-SK"]
     OS = MetadataEnum.WINDOWS
-    root_path = "D:\Develop\GIT\TomCore"
+    root_path = None
     topic = ""
     current_synapse_model = SynapseModel()
     current_db_file_path = None

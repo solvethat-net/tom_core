@@ -29,7 +29,7 @@ class Directory(ParentObject):
         return MetadataEnum.COPIED
 
     def delete(self):
-        os.rmdir(self.input)
+        shutil.rmtree(self.input)
         return MetadataEnum.DELETED
 
     def create(self):
@@ -55,3 +55,7 @@ class Directory(ParentObject):
     def rename(self):
         os.rename(self.input, self.output)
         return MetadataEnum.RENAMED
+
+    def check_exist(self, path):
+        return os.path.isdir(path)
+
