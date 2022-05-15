@@ -22,8 +22,9 @@ import git
 # Check if .git dir exist, when does than do pull or do init when doesn't
 # After running this script is recommended to run pip install -r requirements.txt
 if __name__ == "__main__":
+    # First arg is for install dir path, argument is obligatory
     repo_path = sys.argv[1]
-
+    print("Updating repository", repo_path)
     if os.path.isdir(repo_path + '\\.git'):
         empty_repo = git.Repo(repo_path)
         origin = empty_repo.remote('origin')
