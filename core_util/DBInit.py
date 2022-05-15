@@ -1,4 +1,4 @@
-# TOM_CORE version n. 0.1.5
+# TOM_CORE version n. 0.1.6
 # Copyright (C) 2022 Tomáš Sýkora
 
 # This program is free software; you can redistribute it and/or
@@ -13,19 +13,13 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, is available on:
-# https://www.solvethat.net/installer/GNU_License.pdf
+# https://www.solvethat.net/installer/LICENSE
 
 # USER DATABASE data create
 import os
 import sqlite3
-
 # This script is initializing user database
 # If you need to reset application you can run this script
-
-# TODO NEEDS OWN GUI
-
-# This part is checking if all dependencies are installed
-
 
 # This part is creating new user database
 db_path = str(os.path.dirname(os.path.abspath(__file__))).replace("core_util", "") + "database\\UDB.db"

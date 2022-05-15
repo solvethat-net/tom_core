@@ -1,4 +1,4 @@
-# TOM_CORE version n. 0.1.5
+# TOM_CORE version n. 0.1.6
 # Copyright (C) 2022 Tomáš Sýkora
 
 # This program is free software; you can redistribute it and/or
@@ -13,15 +13,15 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, is available on:
-# https://www.solvethat.net/installer/GNU_License.pdf
+# https://www.solvethat.net/installer/LICENSE
 
 import os
 import git
 
-# Script for app update with git
-# 1. Check if .git dir exist, when does than do pull or do init when doesn't
-
-repo_path = os.path.dirname(os.path.abspath(__file__))
+# Script for app update with git, run from tom_core install dir
+# Check if .git dir exist, when does than do pull or do init when doesn't
+# After running this script is recommended to run pip install -r requirements.txt
+repo_path = os.getcwd()
 if os.path.isdir(repo_path + '\\.git'):
     empty_repo = git.Repo(repo_path)
     origin = empty_repo.remote('origin')
@@ -34,6 +34,3 @@ else:
     origin.fetch()
     empty_repo.create_head('main', origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
     origin.pull()
-
-# 2. Install requirements.txt with local pip Filename: "{app}\venv\Scripts\pip.exe"; Parameters:"install -r {app}\install_assets\requirements.txt"; Flags: runasoriginaluser runhidden
-os.system(repo_path + '\\venv\\Scripts\\pip.exe install -r ' + repo_path + '\\install_assets\\requirements.txt')

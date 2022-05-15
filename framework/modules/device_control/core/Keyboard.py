@@ -1,4 +1,4 @@
-# TOM_CORE version n. 0.1.5
+# TOM_CORE version n. 0.1.6
 # Copyright (C) 2022 Tomáš Sýkora
 
 # This program is free software; you can redistribute it and/or
@@ -13,7 +13,7 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, is available on:
-# https://www.solvethat.net/installer/GNU_License.pdf
+# https://www.solvethat.net/installer/LICENSE
 
 import time
 import keyboard
