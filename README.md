@@ -17,6 +17,8 @@ However, if you can program, it’s possible to use all the source code of the a
 All you have to do is open the installation directory, like every other Python project, in your IDE.
 
 Check user manual on https://www.solvethat.net/manual.html.
+Application is intended for Windows 10 or 11, support for other systems is in development.
+For your comfort I prepared .exe installer here https://www.solvethat.net/installer/tom_core_installer.exe and is recomended to use it. If you installing application manually you need to install PyAudio that is not included in requirements.txt because is system type dependent. Run {install_dir}\venv\Scripts\pip.exe install {install_dir}\install_assets\{PyAudio WHL by your system}
 
 You can run application with .bat script that open CMD or by double clicking on .vbs without openning cmd window.
 
