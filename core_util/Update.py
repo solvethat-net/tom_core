@@ -17,23 +17,19 @@
 
 import os
 import sys
-import git
+
+from dulwich import porcelain
 
 # Check if .git dir exist, when does than do pull or do init when doesn't
 # After running this script is recommended to run pip install -r requirements.txt
 if __name__ == "__main__":
     # First arg is for install dir path, argument is obligatory
+    print("Update via GIT script")
+    remote_repo = "https://github.com/solvethat-net/tom_core.git"
     repo_path = sys.argv[1]
-    print("Updating repository", repo_path)
     if os.path.isdir(repo_path + '\\.git'):
-        empty_repo = git.Repo(repo_path)
-        origin = empty_repo.remote('origin')
-        origin.pull()
+        print("Pull repository", repo_path)
+        porcelain.pull(repo_path)
     else:
-        empty_repo = git.Repo.init(os.path.join(repo_path))
-        origin = empty_repo.create_remote('origin', 'https://github.com/solvethat-net/tom_core.git')
-        assert origin.exists()
-        assert origin == empty_repo.remotes.origin == empty_repo.remotes['origin']
-        origin.fetch()
-        empty_repo.create_head('main', origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
-        origin.pull()
+        print("Clone repository", repo_path)
+        porcelain.clone(remote_repo, repo_path)
