@@ -22,4 +22,4 @@ You can run application with .bat script that open CMD or by double clicking on 
 
 If you want to start application from CMD without scripts, just run "python Main.py".
 
-.bat script will try to update app with every start. 
+.bat script will try to update app with every start. core_util then contains more specific python scripts.
